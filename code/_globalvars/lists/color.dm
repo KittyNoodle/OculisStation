@@ -52,7 +52,7 @@ GLOBAL_LIST_INIT(color_list_ethereal, list(
 // OCULIS EDIT ADDITION START
 	"Dark Fuschia" = "#C70064",
 	"Fuschia" = "#FF0066",
-	"Dark Purple" = "#502A77",
+	"Dark Purple" = "#794A7F",
 // OCULIS EDIT REMOVAL END
 ))
 

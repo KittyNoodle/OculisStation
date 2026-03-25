@@ -93,6 +93,7 @@
 		return
 	if(ethereal.stat != DEAD && !disrupted)
 		var/healthpercent = max(ethereal.health, 0) / 100
+		to_chat(world, "Not dead")
 		if(!emageffect)
 			var/static/list/skin_color = rgb2num("#eda495")
 			var/list/colors = rgb2num(ethereal.dna.features[FEATURE_ETHEREAL_COLOR])
@@ -112,13 +113,24 @@
 				currently_flickered = FALSE
 			ethereal_light.set_light_on(TRUE)
 		fixed_mut_color = current_color
+		// OCULIS EDIT ADDITION START
+		if(ethereal.organs_slot["horns"])
+			var/obj/item/organ/horms = ethereal.organs_slot["horns"]
+			horms.bodypart_overlay.draw_color = list(current_color)
+		// OCULIS EDIT ADDITION END
 		ethereal.update_body()
 		ethereal.set_facial_haircolor(current_color, override = TRUE, update = FALSE)
 		ethereal.set_haircolor(current_color, override = TRUE,  update = TRUE)
 	else
+		to_chat(world, "dead")
 		ethereal_light.set_light_on(FALSE)
 		var/dead_color = rgb(128,128,128)
 		fixed_mut_color = dead_color
+		// OCULIS EDIT ADDITION START
+		if(ethereal.organs_slot["horns"])
+			var/obj/item/organ/horms = ethereal.organs_slot["horns"]
+			horms.bodypart_overlay.draw_color = list(dead_color)
+		// OCULIS EDIT ADDITION END
 		ethereal.update_body()
 		ethereal.set_facial_haircolor(dead_color, override = TRUE, update = FALSE)
 		ethereal.set_haircolor(dead_color, override = TRUE, update = TRUE)
