@@ -93,7 +93,6 @@
 		return
 	if(ethereal.stat != DEAD && !disrupted)
 		var/healthpercent = max(ethereal.health, 0) / 100
-		to_chat(world, "Not dead")
 		if(!emageffect)
 			var/static/list/skin_color = rgb2num("#eda495")
 			var/list/colors = rgb2num(ethereal.dna.features[FEATURE_ETHEREAL_COLOR])
@@ -122,9 +121,13 @@
 		ethereal.set_facial_haircolor(current_color, override = TRUE, update = FALSE)
 		ethereal.set_haircolor(current_color, override = TRUE,  update = TRUE)
 	else
-		to_chat(world, "dead")
 		ethereal_light.set_light_on(FALSE)
-		var/dead_color = rgb(128,128,128)
+		// OCULIS EDIT REMOVAL START
+		// var/dead_color = rgb(128,128,128)
+		// OCULIS EDIT REMOVAL END
+		// OCULIS EDIT ADDITION START
+		var/dead_color = rgb(230, 230, 230)
+		// OCULIS EDIT ADDITION END
 		fixed_mut_color = dead_color
 		// OCULIS EDIT ADDITION START
 		if(ethereal.organs_slot["horns"])
@@ -134,6 +137,7 @@
 		ethereal.update_body()
 		ethereal.set_facial_haircolor(dead_color, override = TRUE, update = FALSE)
 		ethereal.set_haircolor(dead_color, override = TRUE, update = TRUE)
+	ethereal.update_body()
 
 /datum/species/ethereal/proc/on_emp_act(mob/living/carbon/human/source, severity, protection)
 	SIGNAL_HANDLER
