@@ -133,6 +133,7 @@
 		if(ethereal.organs_slot["horns"])
 			var/obj/item/organ/horms = ethereal.organs_slot["horns"]
 			horms.bodypart_overlay.draw_color = list(dead_color)
+		current_color = dead_color //Ethereal limbs directly get the color of the ethereal's current_color and not fixed_mut_color.
 		// OCULIS EDIT ADDITION END
 		ethereal.update_body()
 		ethereal.set_facial_haircolor(dead_color, override = TRUE, update = FALSE)
