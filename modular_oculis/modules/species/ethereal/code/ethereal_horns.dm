@@ -43,7 +43,7 @@
 	savefile_key = "feature_ethereal_horns"
 	relevant_mutant_bodypart = FEATURE_HORNS_ETHEREAL
 	type_to_check = /datum/preference/toggle/mutant_toggle/ethereal_horns
-	default_accessory_type = /datum/sprite_accessory/ethereal_horns/short
+	default_accessory_type = /datum/sprite_accessory/ethereal_horns/none
 
 //Sprite Accessories//
 /datum/sprite_accessory/ethereal_horns
@@ -52,7 +52,7 @@
 	key = FEATURE_HORNS_ETHEREAL
 	organ_type = /obj/item/organ/ethereal_horns
 	relevent_layers = list(BODY_FRONT_LAYER, BODY_ADJ_LAYER)
-	recommended_species = list(SPECIES_ETHEREAL)
+	recommended_species = list(SPECIES_ETHEREAL = 1)
 
 /datum/sprite_accessory/ethereal_horns/is_hidden(mob/living/carbon/human/wearer)
 	var/obj/item/clothing/head/worn_head = wearer.head
