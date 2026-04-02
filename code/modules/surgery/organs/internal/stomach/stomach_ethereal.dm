@@ -25,7 +25,7 @@
 	. = ..()
 	RegisterSignal(stomach_owner, COMSIG_PROCESS_BORGCHARGER_OCCUPANT, PROC_REF(charge))
 	RegisterSignal(stomach_owner, COMSIG_LIVING_ELECTROCUTE_ACT, PROC_REF(on_electrocute))
-	RegisterSignal(stomach_owner, COMSIG_ATOM_EXAMINE, PROC_REF(on_owner_examine)) // OCULIS EDIT ADDITION
+	RegisterSignal(stomach_owner, COMSIG_ATOM_EXAMINE, PROC_REF(on_ethereal_examine)) // OCULIS EDIT ADDITION
 
 /obj/item/organ/stomach/ethereal/on_mob_remove(mob/living/carbon/stomach_owner)
 	. = ..()
