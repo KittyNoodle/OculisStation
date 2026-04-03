@@ -9972,7 +9972,6 @@
 #include "modular_oculis\modules\species\ethereal\code\ethereal_bodyparts.dm"
 #include "modular_oculis\modules\species\ethereal\code\ethereal_eyes.dm"
 #include "modular_oculis\modules\species\ethereal\code\ethereal_horns.dm"
-#include "modular_oculis\modules\species\ethereal\code\stomach_ethereal.dm"
 #include "modular_oculis\modules\species\holosynth\code\holopassthrough.dm"
 #include "modular_oculis\modules\species\holosynth\code\holosynth.dm"
 #include "modular_oculis\modules\species\holosynth\code\holosynth_effects.dm"
