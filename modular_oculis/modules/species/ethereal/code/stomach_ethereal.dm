@@ -1,4 +1,4 @@
-/obj/item/organ/stomach/ethereal/proc/on_ethereal_examine(datum/source, mob/user, list/examine_list)
+/obj/item/organ/stomach/ethereal/proc/on_owner_examine(datum/source, mob/user, list/examine_list)
 	if(!isethereal(owner)) //All of these effect the light the ethereal emits, it makes no sense on a non-ethereal
 		return
 
