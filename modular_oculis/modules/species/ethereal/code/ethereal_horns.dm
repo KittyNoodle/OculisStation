@@ -28,6 +28,8 @@
 	return SSaccessories.sprite_accessories[FEATURE_HORNS_ETHEREAL]
 
 /datum/bodypart_overlay/mutant/ethereal_horns/can_draw_on_bodypart(obj/item/bodypart/bodypart_owner)
+	if(!..())
+		return FALSE
 	var/mob/living/carbon/human/human = bodypart_owner.owner
 	if(!istype(human))
 		return TRUE
